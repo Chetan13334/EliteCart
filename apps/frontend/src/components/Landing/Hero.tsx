@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ backgroundImage }) => {
             <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
                 <span className="text-white/80 uppercase tracking-[0.4em] text-xs mb-6 font-medium gsap-hero-item">New Arrival</span>
                 <h1 className="text-5xl md:text-7xl font-light text-white mb-8 tracking-tight max-w-4xl leading-tight gsap-hero-item">
-                    The Autumn Collection 2024
+                    The Autumn Collection 2026
                 </h1>
                 <p className="text-white/90 text-lg md:text-xl font-light mb-10 max-w-2xl gsap-hero-item">
                     Timeless elegance for the modern individual. Discover pieces crafted for longevity and style.
