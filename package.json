@@ -1,0 +1,13 @@
+{
+  "name": "elitecart-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "frontend": "npm run dev --prefix apps/frontend",
+    "backend": "npm run dev --prefix apps/backend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
