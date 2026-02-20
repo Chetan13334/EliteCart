@@ -38,14 +38,14 @@ const Header = () => {
                         <div className="hidden lg:flex items-center bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-2 border border-transparent focus-within:border-primary transition-all">
                             <span className="material-symbols-outlined text-slate-400 text-lg">search</span>
                             <input
-                                className="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-slate-400 text-slate-900 dark:text-white"
+                                className="bg-transparent border-none outline-none focus:ring-0 text-sm w-48 placeholder:text-slate-400 text-slate-900 dark:text-white"
                                 placeholder="Search our collection..."
                                 type="text"
                             />
                         </div>
 
-                        <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all relative text-slate-600 dark:text-slate-400 hover:text-primary">
-                            <span className="material-symbols-outlined">shopping_cart</span>
+                        <button className="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all relative text-slate-600 dark:text-slate-400 hover:text-primary">
+                            <span className="mt-3 material-symbols-outlined">shopping_cart</span>
                             <span className="absolute top-1 right-1 w-4 h-4 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center">2</span>
                         </button>
 

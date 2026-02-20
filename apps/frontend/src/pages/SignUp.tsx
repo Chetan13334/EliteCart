@@ -1,6 +1,7 @@
 import React, { useState, type FormEvent, type ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import FloatingButton from "../components/common/FloatingButton";
 import modelImg from "../assets/model2.jpg";
 
 const SignUp: React.FC = () => {
@@ -29,7 +30,7 @@ const SignUp: React.FC = () => {
 
         try {
             await signup({ name: form.name, email: form.email, password: form.password });
-            navigate("/home");
+            navigate("/signin");
         } catch (err: unknown) {
             setError(err instanceof Error ? err.message : "Sign up failed. Please try again.");
         } finally {
@@ -51,10 +52,10 @@ const SignUp: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
                     <div className="absolute bottom-8 left-8 max-w-md text-white">
                         <span className="uppercase tracking-[0.3em] text-xs font-medium mb-4 block">
-                            Autumn Collection 2024
+                            Autumn Collection 2026
                         </span>
                         <h2 className="text-4xl font-light leading-tight mb-4">
-                            Join the LUXE Circle: Experience personalized luxury.
+                            Join the EliteCart Circle: Experience personalized luxury.
                         </h2>
                         <p className="text-white/80 font-light">
                             Become a member to access exclusive collections, personalized
@@ -221,7 +222,7 @@ const SignUp: React.FC = () => {
 
                         </form>
 
-                        {/* Footer */}
+                        {/* Footer links */}
                         <div className="text-center pt-2">
                             <p className="text-sm text-slate-500 dark:text-slate-400">
                                 Already have an account?
@@ -241,6 +242,8 @@ const SignUp: React.FC = () => {
                     </div>
                 </div>
             </div>
+            {/* Back to landing/previous button — top-left */}
+            <FloatingButton mode="back" position="top-left" />
         </div>
     );
 };

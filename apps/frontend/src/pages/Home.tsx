@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
+import homeModelImg from "../assets/HomeModel.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-import Header from "../components/Landing/Header";
-import Footer from "../components/Landing/Footer";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import FeaturedSection from "../components/Landing/FeaturedSection";
 import Recommendations from "../components/Landing/Recommendations";
 import { useAuth } from "../contexts/AuthContext";
@@ -122,10 +123,9 @@ const Home: React.FC = () => {
                     {/* Parallax + Ken Burns background */}
                     <div
                         ref={heroBgRef}
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+                        className="absolute inset-0 bg-cover  bg-center bg-no-repeat will-change-transform"
                         style={{
-                            backgroundImage:
-                                "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBC14X1SRJrO7EXlnNdA1c76F9A7hUd_Nha3QtfcCk38ijoNKPAVLGZM5flOGqB_eVPlDayC97YxJNEU43D-17oEnC8ga1FrHv3bn6lytZ7OBf1Uj-W5Ni9fcVmKyIYuaS8fghJVS0xOUOQTWntCFeAO0dsBCC18PAS8R3TEGJdXrPSzLlRhNxaNUV1NnNMl0mS_BMf0e5mmOO8g9GjXc6j6eD1QP1r3xI59zF5CCR0K5Jj_il3ThU54JMi24SwiAQGDrG8hjRdY7M')",
+                            backgroundImage: `url('${homeModelImg}')`,
                         }}
                     >
                         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/55" />
@@ -142,7 +142,7 @@ const Home: React.FC = () => {
                         </h1>
 
                         <p className="home-hero-item text-white/90 text-lg md:text-xl font-light mb-10 max-w-2xl">
-                            Discover the latest arrivals in our Autumn 2024 collection,
+                            Discover the latest arrivals in our Autumn 2026 collection,
                             handpicked to complement your style.
                         </p>
 
