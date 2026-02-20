@@ -1,8 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 
 const Header = () => {
     const navigate = useNavigate();
+    const { isAuthenticated, user, signout } = useAuth();
+
+    const handleSignout = async () => {
+        await signout();
+        navigate('/');
+    };
+
     return (
         <header className="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,7 +32,8 @@ const Header = () => {
                             <a className="hover:text-primary transition-colors" href="#">Journal</a>
                         </nav>
                     </div>
-                    {/* Icons & Search */}
+
+                    {/* Icons & Actions */}
                     <div className="flex items-center gap-6">
                         <div className="hidden lg:flex items-center bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-2 border border-transparent focus-within:border-primary transition-all">
                             <span className="material-symbols-outlined text-slate-400 text-lg">search</span>
@@ -34,19 +43,39 @@ const Header = () => {
                                 type="text"
                             />
                         </div>
-                        <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all relative text-slate-600 dark:text-slate-400 hover:text-primary">
-                            <span className="material-symbols-outlined">person</span>
-                        </button>
+
                         <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-all relative text-slate-600 dark:text-slate-400 hover:text-primary">
                             <span className="material-symbols-outlined">shopping_cart</span>
                             <span className="absolute top-1 right-1 w-4 h-4 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center">2</span>
                         </button>
-                        <button
-                            onClick={() => navigate('/signin')}
-                            className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-primary/20 active:scale-95"
-                        >
-                            Sign In
-                        </button>
+
+                        {isAuthenticated && user ? (
+                            <div className="flex items-center gap-3">
+                                {/* Avatar + name */}
+                                <div className="flex items-center gap-2">
+                                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold uppercase">
+                                        {user.name.charAt(0)}
+                                    </div>
+                                    <span className="hidden lg:block text-sm font-semibold text-slate-700 dark:text-slate-200 max-w-[120px] truncate">
+                                        {user.name}
+                                    </span>
+                                </div>
+                                {/* Sign Out */}
+                                <button
+                                    onClick={handleSignout}
+                                    className="bg-slate-100 dark:bg-slate-800 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-500 text-slate-600 dark:text-slate-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all"
+                                >
+                                    Sign Out
+                                </button>
+                            </div>
+                        ) : (
+                            <button
+                                onClick={() => navigate('/signin')}
+                                className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-primary/20 active:scale-95"
+                            >
+                                Sign In
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>
