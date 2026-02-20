@@ -3,12 +3,12 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
-import Header from '../components/Landing/Header';
+import Header from '../components/layout/Header';
 import Hero from '../components/Landing/Hero';
 import FeaturedSection from '../components/Landing/FeaturedSection';
 import Journal from '../components/Landing/Journal';
 import Recommendations from '../components/Landing/Recommendations';
-import Footer from '../components/Landing/Footer';
+import Footer from '../components/layout/Footer';
 
 import heroImage from '../assets/pixels.jpg';
 

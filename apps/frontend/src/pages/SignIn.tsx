@@ -1,6 +1,7 @@
 import React, { useState, type FormEvent, type ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import FloatingButton from "../components/common/FloatingButton";
 import modelImg from "../assets/model.jpg";
 
 const SignIn: React.FC = () => {
@@ -45,7 +46,7 @@ const SignIn: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
           <div className="absolute bottom-12 left-12 max-w-md text-white">
             <span className="uppercase tracking-[0.3em] text-xs font-medium mb-4 block">
-              Autumn Collection 2024
+              Autumn Collection 2026
             </span>
             <h2 className="text-4xl font-light leading-tight mb-4">
               Redefining the essence of modern luxury.
@@ -189,6 +190,7 @@ const SignIn: React.FC = () => {
           </div>
         </div>
       </div>
+      <FloatingButton mode="back" position="top-left" />
     </div>
   );
 };

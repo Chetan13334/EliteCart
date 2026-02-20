@@ -1,4 +1,5 @@
 import React from 'react';
+import FloatingButton from '../common/FloatingButton';
 
 const Footer = () => {
     return (
@@ -12,7 +13,7 @@ const Footer = () => {
                                     <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
                                 </svg>
                             </div>
-                            <span className="text-xl font-bold tracking-tighter">EliteCard</span>
+                            <span className="text-xl font-bold tracking-tighter">EliteCart</span>
                         </div>
                         <p className="mb-8 max-w-sm text-sm">Elevating your lifestyle with premium fashion and artisan craftsmanship. Sustainable, ethical, and timeless.</p>
                         <div className="flex gap-4">
@@ -36,7 +37,7 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-semibold mb-6 uppercase tracking-widest text-xs">Customer Care</h4>
                         <ul className="space-y-4 text-sm">
-                            <li><a className="hover:text-white transition-colors" href="#">Shipping & Returns</a></li>
+                            <li><a className="hover:text-white transition-colors" href="#">Shipping &amp; Returns</a></li>
                             <li><a className="hover:text-white transition-colors" href="#">Size Guide</a></li>
                             <li><a className="hover:text-white transition-colors" href="#">Contact Us</a></li>
                             <li><a className="hover:text-white transition-colors" href="#">FAQ</a></li>
@@ -47,7 +48,7 @@ const Footer = () => {
                         <p className="text-sm mb-6">Join our community for early access and exclusive previews.</p>
                         <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
                             <input
-                                className="w-full bg-slate-900 border-slate-800 rounded-lg text-sm px-4 py-3 focus:ring-primary focus:border-primary text-white"
+                                className="w-full bg-slate-900 border border-slate-800 rounded-lg text-sm px-4 py-3 outline-none focus:border-primary text-white placeholder:text-slate-500 transition-colors"
                                 placeholder="email@example.com"
                                 type="email"
                             />
@@ -55,21 +56,17 @@ const Footer = () => {
                         </form>
                     </div>
                 </div>
-                <div className="border-t border-slate-900 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em]">
-                    <p>© 2024 LUXE Premium E-commerce. All rights reserved.</p>
+                <div className="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em]">
+                    <p>© 2026 EliteCart Premium E-commerce. All rights reserved.</p>
                     <div className="flex gap-8">
-                        <a className="hover:text-white" href="#">Privacy Policy</a>
-                        <a className="hover:text-white" href="#">Terms of Service</a>
+                        <a className="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                        <a className="hover:text-white transition-colors" href="#">Terms of Service</a>
                     </div>
                 </div>
             </div>
-            {/* Back to top button */}
-            <button
-                className="fixed bottom-8 right-8 p-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-full shadow-2xl border border-slate-200 dark:border-slate-700 hover:scale-110 active:scale-95 transition-all z-40"
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-                <span className="material-symbols-outlined">arrow_upward</span>
-            </button>
+
+            {/* Scroll-to-top floating button — bottom-right */}
+            <FloatingButton mode="scroll-top" position="bottom-right" />
         </footer>
     );
 };

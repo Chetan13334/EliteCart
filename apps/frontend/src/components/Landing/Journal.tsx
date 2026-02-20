@@ -17,7 +17,7 @@ const Journal = () => {
                             <span className="text-primary font-bold uppercase tracking-widest text-xs">Our Heritage</span>
                             <h2 className="text-4xl font-bold mt-4 mb-6 leading-tight text-slate-900 dark:text-white">Mastering Craftsmanship in a Digital Age</h2>
                             <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                                LUXE isn't just about fashion. It's about a seamless interaction between design and technology. Powered by a modern MERN stack architecture, we ensure your journey from discovery to delivery is as elegant as the garments we create.
+                                EliteCart isn't just about fashion. It's about a seamless interaction between design and technology. Powered by a modern MERN stack architecture, we ensure your journey from discovery to delivery is as elegant as the garments we create.
                             </p>
                         </div>
                         <a className="inline-flex items-center gap-3 text-lg font-semibold text-slate-900 dark:text-white border-b-2 border-primary pb-1 group" href="#">
